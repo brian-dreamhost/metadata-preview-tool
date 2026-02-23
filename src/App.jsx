@@ -91,7 +91,7 @@ function App() {
               Free Tool
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
-              Metadata Preview Tool
+              SERP Preview Tool
             </h1>
             <p className="text-lg text-cloudy max-w-2xl mx-auto leading-relaxed">
               See how your pages will appear in Google search results and social media before publishing.
@@ -145,7 +145,7 @@ function App() {
       <footer className="border-t border-metal/30 mt-12">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-galactic">
-            <p>Free Metadata Preview Tool — Part of the DreamHost SEO Tools collection</p>
+            <p>Free SERP Preview Tool — Part of the DreamHost SEO Tools collection</p>
             <div className="flex items-center gap-4">
               <a
                 href="https://developers.google.com/search/docs/appearance/snippet"
