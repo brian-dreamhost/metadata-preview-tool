@@ -38,6 +38,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --color-abyss: #000000;
   --color-oblivion: #111111;
   --color-midnight: #071C26;
@@ -87,7 +88,7 @@ body {
 
 .bg-glow {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .bg-glow::before {

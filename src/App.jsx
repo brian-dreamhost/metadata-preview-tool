@@ -103,7 +103,7 @@ function App() {
             <button
               type="button"
               onClick={fillTestData}
-              className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors"
+              className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors focus:outline-none focus:ring-2 focus:ring-prince focus:ring-offset-2 focus:ring-offset-abyss"
             >
               Fill Test Data
             </button>
@@ -159,7 +159,7 @@ function App() {
                 href="https://ogp.me/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="text-azure hover:text-white transition-colors"
               >
                 Open Graph Protocol
               </a>

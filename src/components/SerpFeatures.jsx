@@ -1,7 +1,7 @@
 import { ToggleSwitch } from './ToggleSwitch';
 
 const inputClasses = 'w-full px-3 py-2 bg-white/10 border border-white/10 rounded-lg text-white text-sm placeholder-galactic focus:outline-none focus:ring-2 focus:ring-azure focus:border-transparent transition-colors';
-const selectClasses = 'px-3 py-2 bg-white/10 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-azure focus:border-transparent transition-colors appearance-none cursor-pointer';
+const selectClasses = 'px-3 py-2 bg-white/10 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-azure focus:border-transparent transition-colors cursor-pointer';
 const labelClasses = 'block text-xs font-medium text-galactic mb-1';
 
 export function SerpFeatures({ richResults, setRichResults }) {
@@ -67,7 +67,7 @@ export function SerpFeatures({ richResults, setRichResults }) {
                 <option value="PreOrder">Pre-order</option>
               </select>
             </div>
-            <div className="col-span-2 sm:col-span-1" />
+            <div className="hidden sm:block" />
             <div>
               <label className={labelClasses}>Rating (1-5)</label>
               <input
@@ -139,7 +139,7 @@ export function SerpFeatures({ richResults, setRichResults }) {
         >
           <div className="space-y-2">
             {richResults.sitelinks.links.map((link, i) => (
-              <div key={i} className="flex gap-2 items-center">
+              <div key={i} className="flex flex-col sm:flex-row gap-2 sm:items-center">
                 <input
                   type="text"
                   value={link.text}
@@ -165,11 +165,12 @@ export function SerpFeatures({ richResults, setRichResults }) {
                 {richResults.sitelinks.links.length > 2 && (
                   <button
                     type="button"
+                    aria-label={`Remove sitelink ${i + 1}`}
                     onClick={() => {
                       const links = richResults.sitelinks.links.filter((_, idx) => idx !== i);
                       update('sitelinks', { links });
                     }}
-                    className="text-galactic hover:text-coral transition-colors flex-shrink-0"
+                    className="p-2 -m-1 text-galactic hover:text-coral transition-colors flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-azure rounded"
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -185,7 +186,7 @@ export function SerpFeatures({ richResults, setRichResults }) {
                   const links = [...richResults.sitelinks.links, { text: '', url: '' }];
                   update('sitelinks', { links });
                 }}
-                className="text-sm text-azure hover:text-white transition-colors"
+                className="text-sm text-azure hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-azure rounded"
               >
                 + Add link
               </button>
@@ -218,11 +219,12 @@ export function SerpFeatures({ richResults, setRichResults }) {
                   {richResults.faq.items.length > 2 && (
                     <button
                       type="button"
+                      aria-label={`Remove question ${i + 1}`}
                       onClick={() => {
                         const items = richResults.faq.items.filter((_, idx) => idx !== i);
                         update('faq', { items });
                       }}
-                      className="text-galactic hover:text-coral transition-colors flex-shrink-0"
+                      className="p-2 -m-1 text-galactic hover:text-coral transition-colors flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-azure rounded"
                     >
                       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -250,7 +252,7 @@ export function SerpFeatures({ richResults, setRichResults }) {
                   const items = [...richResults.faq.items, { question: '', answer: '' }];
                   update('faq', { items });
                 }}
-                className="text-sm text-azure hover:text-white transition-colors"
+                className="text-sm text-azure hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-azure rounded"
               >
                 + Add question
               </button>
@@ -284,11 +286,12 @@ export function SerpFeatures({ richResults, setRichResults }) {
                   {richResults.breadcrumbs.items.length > 1 && (
                     <button
                       type="button"
+                      aria-label={`Remove breadcrumb level ${i + 1}`}
                       onClick={() => {
                         const items = richResults.breadcrumbs.items.filter((_, idx) => idx !== i);
                         update('breadcrumbs', { items });
                       }}
-                      className="text-galactic hover:text-coral transition-colors"
+                      className="p-2 -m-1 text-galactic hover:text-coral transition-colors focus:outline-none focus:ring-2 focus:ring-azure rounded"
                     >
                       <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -305,7 +308,7 @@ export function SerpFeatures({ richResults, setRichResults }) {
                   const items = [...richResults.breadcrumbs.items, ''];
                   update('breadcrumbs', { items });
                 }}
-                className="text-sm text-azure hover:text-white transition-colors"
+                className="text-sm text-azure hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-azure rounded"
               >
                 + Add level
               </button>

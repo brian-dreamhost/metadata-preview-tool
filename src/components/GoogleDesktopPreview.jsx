@@ -73,7 +73,7 @@ export function GoogleDesktopPreview({ title, description, url, richResults }) {
       </div>
 
       {/* SERP Result Container */}
-      <div className={`bg-white rounded-lg p-5 max-w-[600px] ${isEmpty ? 'opacity-50' : ''}`} style={{ fontFamily: 'Arial, sans-serif' }}>
+      <div className={`bg-white rounded-lg p-3 sm:p-5 max-w-[600px] ${isEmpty ? 'opacity-50' : ''}`} style={{ fontFamily: 'Arial, sans-serif' }}>
 
         {/* Main result area — flex row if video thumbnail is present */}
         <div className={showVideo ? 'flex gap-4' : ''}>

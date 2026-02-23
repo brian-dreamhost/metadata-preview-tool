@@ -5,7 +5,7 @@ export function PreviewTabs({ tabs, activeTab, onTabChange }) {
         <button
           key={tab}
           onClick={() => onTabChange(tab)}
-          className={`flex-1 min-w-0 px-4 py-2.5 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
+          className={`flex-shrink-0 sm:flex-1 px-4 py-2.5 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
             activeTab === tab
               ? 'bg-azure text-white'
               : 'text-galactic hover:text-white hover:bg-white/5'
