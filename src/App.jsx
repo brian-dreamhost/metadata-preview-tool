@@ -10,7 +10,6 @@ import { SerpFeatures } from './components/SerpFeatures';
 
 const TABS = ['Google Desktop', 'Google Mobile', 'Facebook', 'Twitter/X'];
 
-/* ========== DEV MODE START - Remove this block for production ========== */
 const DUMMY_DATA = {
   title: 'Best Wireless Headphones 2025 — Expert Reviews & Buyer\'s Guide',
   description: 'Compare the top-rated wireless headphones of 2025. We tested 50+ models for sound quality, comfort, battery life, and value. Find your perfect pair today.',
@@ -34,7 +33,6 @@ const DUMMY_DATA = {
     video: { enabled: false, thumbnailUrl: '', duration: '' },
   },
 };
-/* ========== DEV MODE END ========== */
 
 const INITIAL_RICH_RESULTS = {
   product: { enabled: false, price: '', currency: 'USD', availability: 'InStock', rating: '', reviewCount: '' },
@@ -54,7 +52,6 @@ function App() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [richResults, setRichResults] = useState(INITIAL_RICH_RESULTS);
 
-  /* ========== DEV MODE START - Remove this block for production ========== */
   const fillTestData = () => {
     setTitle(DUMMY_DATA.title);
     setDescription(DUMMY_DATA.description);
@@ -62,7 +59,6 @@ function App() {
     setOgImage(DUMMY_DATA.ogImage);
     setRichResults(DUMMY_DATA.richResults);
   };
-  /* ========== DEV MODE END ========== */
 
   const metadata = { title, description, url, ogImage };
 
@@ -83,7 +79,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-abyss text-white bg-glow">
-      <div className="max-w-6xl mx-auto px-4 py-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 py-12 relative z-10">
         <div className="animate-fadeIn">
           {/* Breadcrumb */}
           <nav className="mb-8 text-sm text-galactic">
@@ -107,7 +103,6 @@ function App() {
             </p>
           </div>
 
-          {/* ========== DEV MODE START - Remove this block for production ========== */}
           <div className="flex justify-end mb-4">
             <button
               type="button"
@@ -117,7 +112,6 @@ function App() {
               Fill Test Data
             </button>
           </div>
-          {/* ========== DEV MODE END ========== */}
 
           {/* Input Form */}
           <MetadataForm
@@ -152,7 +146,7 @@ function App() {
 
       {/* Footer */}
       <footer className="border-t border-metal/30 mt-12">
-        <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="max-w-[1600px] mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-galactic">
             <p>Free SERP Preview Tool — Part of the DreamHost SEO Tools collection</p>
             <div className="flex items-center gap-4">
